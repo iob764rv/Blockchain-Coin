@@ -1,6 +1,7 @@
 using System;
 using NBitcoin;
 using System.Text;
+using QBitNinja.Client;
 using System.Threading.Tasks;
 
 
