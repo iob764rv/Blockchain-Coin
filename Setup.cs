@@ -11,8 +11,11 @@ namespace blockchainfile
     {
         static void Main(string[] args)
         {
+          Network network = Network.TestNet;
+          ///var treasurer = new BitcoinSecret("key")
         }
     }
 }
-  
+
+
   
