@@ -1,4 +1,5 @@
 using System;
+using NBitcoin;
 using System.Text;
 using System.Threading.Tasks;
 
