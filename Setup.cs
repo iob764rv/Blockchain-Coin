@@ -15,6 +15,9 @@ namespace blockchainfile
           var treasurer = new BitcoinSecret("key")
           var alice = new BitcoinSecret("key");
           
+          
+          Console.WriteLine("treasurer key: " + treasurer.PrivateKey.GetWif(network));
+          Console.WriteLine("Alice     key: " + alice.PrivateKey.GetWif(network));
            
         }
     }
