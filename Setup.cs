@@ -18,6 +18,11 @@ namespace blockchainfile
           
           Console.WriteLine("treasurer key: " + treasurer.PrivateKey.GetWif(network));
           Console.WriteLine("Alice     key: " + alice.PrivateKey.GetWif(network));
+          
+          var scriptPubKey = PayToMultiSigTemplate
+                .Instance
+                .GenerateScriptPubKey(2, new[] { alice.PubKey, treasurer.PubKey });
+
            
         }
     }
