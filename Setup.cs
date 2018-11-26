@@ -22,6 +22,8 @@ namespace blockchainfile
           var scriptPubKey = PayToMultiSigTemplate
                 .Instance
                 .GenerateScriptPubKey(2, new[] { alice.PubKey, treasurer.PubKey });
+          
+          Console.WriteLine("PubKey script: " + scriptPubKey);
 
            
         }
