@@ -29,6 +29,8 @@ namespace blockchainfile
             .Instance
             .GenerateScriptPubKey(2, new[] { bob.PubKey, alice.PubKey, treasurer.PubKey });
 
+          var paymentScript = redeemScript.PaymentScript;
+          Console.WriteLine("paymentScript: " + paymentScript);
 
            
         }
