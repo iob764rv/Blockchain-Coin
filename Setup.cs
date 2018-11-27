@@ -39,7 +39,8 @@ namespace blockchainfile
             // Update
           var receiveTransactionId = uint256.Parse("yourid");
           var receiveTransactionResponse = client.GetTransaction(receiveTransactionId).Result;
-
+          Console.WriteLine(receiveTransactionResponse.TransactionId);
+         
            
         }
     }
