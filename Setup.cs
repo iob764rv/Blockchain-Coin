@@ -31,6 +31,14 @@ namespace blockchainfile
 
           var paymentScript = redeemScript.PaymentScript;
           Console.WriteLine("paymentScript: " + paymentScript);
+          
+          
+          Console.WriteLine("multi-sig address: " + redeemScript.Hash.GetAddress(network));
+          var client = new QBitNinjaClient(network);
+
+            // Update
+          var receiveTransactionId = uint256.Parse("yourid");
+          var receiveTransactionResponse = client.GetTransaction(receiveTransactionId).Result;
 
            
         }
