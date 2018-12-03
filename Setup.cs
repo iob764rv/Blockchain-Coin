@@ -62,7 +62,14 @@ namespace blockchainfile
            if (outpointToSpend == null)
                 throw new Exception("TxOut doesn't contain any our ScriptPubKey");
                 Console.WriteLine("outpoint #{0}");
+            
+          var lucasAddress = BitcoinAddress.Create("address", network);
 
+            TransactionBuilder builder = network.CreateTransactionBuilder();
+
+            var minerFee = new Money(0.0005m, MoneyUnit.BTC);
+            var txInAmount = (Money)receivedCoins[(int)outpointToSpend.N].Amount;
+            var sendAmount = txInAmount - minerFee;
           }
         }
     }
