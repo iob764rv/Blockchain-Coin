@@ -52,7 +52,11 @@ namespace blockchainfile
            
           foreach (var c in receivedCoins)
           {
+                    try
+                {
           
+                }
+                catch { }
           }
         }
     }
