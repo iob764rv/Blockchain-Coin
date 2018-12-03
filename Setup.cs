@@ -41,6 +41,10 @@ namespace blockchainfile
           var receiveTransactionResponse = client.GetTransaction(receiveTransactionId).Result;
           Console.WriteLine(receiveTransactionResponse.TransactionId);
          
+          var receiveTransactionResponse = client.GetTransaction(receiveTransactionId).Result;
+
+          Console.WriteLine(receiveTransactionResponse.TransactionId);
+          Console.WriteLine(receiveTransactionResponse.Block.Confirmations);
            
         }
     }
