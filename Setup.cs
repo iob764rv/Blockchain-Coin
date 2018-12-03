@@ -56,7 +56,7 @@ namespace blockchainfile
                 {
                     coinToSpend = new ScriptCoin(c.Outpoint, c.TxOut, redeemScript);
                     outpointToSpend = c.Outpoint;
-          
+                    break;
                 }
                 catch { }
           }
