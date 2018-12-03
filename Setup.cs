@@ -46,6 +46,14 @@ namespace blockchainfile
           Console.WriteLine(receiveTransactionResponse.TransactionId);
           Console.WriteLine(receiveTransactionResponse.Block.Confirmations);
            
+          var receivedCoins = receiveTransactionResponse.ReceivedCoins;
+          OutPoint outpointToSpend = null;
+          ScriptCoin coinToSpend = null;
+           
+          foreach (var c in receivedCoins)
+          {
+          
+          }
         }
     }
 }
