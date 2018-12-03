@@ -70,6 +70,53 @@ namespace blockchainfile
             var minerFee = new Money(0.0005m, MoneyUnit.BTC);
             var txInAmount = (Money)receivedCoins[(int)outpointToSpend.N].Amount;
             var sendAmount = txInAmount - minerFee;
+            
+               Transaction unsigned =
+                builder
+                    .AddCoins(coinToSpend)
+                    .Send(lucasAddress, sendAmount)
+                    .SetChange(lucasAddress, ChangeType.Uncolored)
+                    .BuildTransaction(sign: false);
+            
+                 Transaction aliceSigned =
+                builder
+                    .AddCoins(coinToSpend)
+                    .AddKeys(alice)
+                   
+                   
+               Transaction bobSigned =
+                builder
+                    .AddCoins(coinToSpend)
+                    .AddKeys(bob)
+                    .SignTransaction(aliceSigned);
+                    .SignTransaction(unsigned);
+            
+            
+              Transaction fullySigned =
+                builder
+                    .AddCoins(coinToSpend)
+                    .CombineSignatures(aliceSigned, bobSigned);
+
+            Console.WriteLine(fullySigned);
+            
+            
+                        var broadcastResponse = client.Broadcast(fullySigned).Result;
+            if (!broadcastResponse.Success)
+            {
+                Console.Error.WriteLine("ErrorCode: " + broadcastResponse.Error.ErrorCode);
+                Console.Error.WriteLine("Error message: " + broadcastResponse.Error.Reason);
+            }
+            else
+            {
+                Console.WriteLine("Success! You can check out the hash of the transaciton in any block explorer:");
+                Console.WriteLine(fullySigned.GetHash());
+            }
+        }
+    }
+}
+            
+            
+            
           }
         }
     }
