@@ -59,6 +59,10 @@ namespace blockchainfile
                     break;
                 }
                 catch { }
+           if (outpointToSpend == null)
+                throw new Exception("TxOut doesn't contain any our ScriptPubKey");
+                Console.WriteLine("outpoint #{0}");
+
           }
         }
     }
