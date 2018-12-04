@@ -98,8 +98,7 @@ namespace blockchainfile
                     .CombineSignatures(aliceSigned, bobSigned);
 
             Console.WriteLine(fullySigned);
-            
-            
+            ]]
                         var broadcastResponse = client.Broadcast(fullySigned).Result;
             if (!broadcastResponse.Success)
             {
